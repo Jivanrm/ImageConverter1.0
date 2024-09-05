@@ -1,0 +1,258 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif; /* Font for the entire page */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    background-color: #f0f4f8; /* Light background color */
+    color: #333; /* Dark text color */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Header Styles */
+.header {
+    text-align: center; /* Center-align text */
+    padding: 40px; /* Add space inside the header */
+    background: #571241; /* Dark background color */
+    color: white; /* White text color */
+}
+
+.header h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 3rem; /* Large font size */
+    font-weight: bold; /* Bold text */
+}
+
+.header p {
+    font-size: 1.2rem; /* Slightly larger font size for the paragraph */
+    margin-top: 10px; /* Space above the paragraph */
+}
+
+/* Main Section Styles */
+.main-section {
+    padding: 60px 20px; /* Space inside the main section */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center-align items horizontally */
+    justify-content: center; /* Center-align items vertically */
+}
+
+/* Upload Section Styles */
+.upload-section {
+    background: #ffffff; /* White background for upload section */
+    padding: 30px; /* Space inside the upload section */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    max-width: 800px; /* Maximum width of the upload section */
+    width: 100%; /* Full width */
+    text-align: center; /* Center-align text */
+}
+
+.upload-section h2 {
+    margin: 0 0 20px; /* Space below the heading */
+    font-size: 2rem; /* Large font size for the heading */
+    color: #5e3a7b; /* Dark purple color */
+}
+
+.upload-box {
+    position: relative; /* Position relative for absolute positioning of child elements */
+    border: 2px dashed #a24d77; /* Dashed border */
+    padding: 20px; /* Space inside the upload box */
+    border-radius: 15px; /* Rounded corners */
+    background: #e8d7e5; /* Light purple background */
+    cursor: pointer; /* Pointer cursor on hover */
+    overflow: hidden; /* Hide overflow */
+}
+
+.upload-box label {
+    display: block; /* Block display for the label */
+    color: #5e3a7b; /* Dark purple color */
+    font-size: 1.5rem; /* Larger font size */
+}
+
+.upload-box input {
+    display: none; /* Hide the file input */
+}
+
+.upload-box i {
+    font-size: 2rem; /* Larger font size for icon */
+    margin-bottom: 10px; /* Space below the icon */
+}
+
+.file-name {
+    margin-top: 10px; /* Space above the file name */
+    font-size: 1.1rem; /* Slightly larger font size */
+    color: #5e3a7b; /* Dark purple color */
+}
+
+/* Format Select Styles */
+.format-label {
+    font-size: 1.2rem; /* Larger font size for the label */
+    margin: 20px 0 10px; /* Space above and below the label */
+    display: block; /* Block display for the label */
+}
+
+.format-select {
+    width: 100%; /* Full width */
+    max-width: 300px; /* Maximum width */
+    padding: 10px; /* Space inside the select */
+    border: 2px solid #a24d77; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+}
+
+/* Button Styles */
+.convert-button,
+.download-button,
+.convert-another-button {
+    display: inline-block; /* Inline block display */
+    padding: 10px 20px; /* Space inside buttons */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    text-decoration: none; /* Remove underline */
+    color: white; /* White text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin: 10px; /* Space around buttons */
+}
+
+.convert-button {
+    background: #5e3a7b; /* Dark purple background */
+}
+
+.convert-button:hover {
+    background: #4b2d5b; /* Darker shade on hover */
+}
+
+/* Result Page Styles */
+.result-page {
+    text-align: center; /* Center-align text */
+    padding: 40px 20px; /* Space inside the result page */
+    flex: 1; /* Take up remaining space */
+}
+
+.result-page img {
+    max-width: 100%; /* Full width but maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    max-height: 300px; /* Maximum height */
+    object-fit: cover; /* Cover the box without distortion */
+    margin-bottom: 20px; /* Space below the image */
+}
+
+.download-button,
+.convert-another-button {
+    display: block; /* Block display for centered buttons */
+    margin: 10px auto; /* Center-align buttons */
+    padding: 10px 20px; /* Space inside buttons */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    text-decoration: none; /* Remove underline */
+    color: white; /* White text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 275px; /* Fixed width */
+}
+
+.download-button {
+    background: rgb(47, 47, 192); /* Dark blue background */
+}
+
+.convert-another-button {
+    background: rgb(141, 29, 29); /* Dark red background */
+}
+
+/* Footer Styles */
+footer {
+    background: black; /* Black background */
+    color: white; /* White text color */
+    padding: 20px 0; /* Space inside the footer */
+    text-align: center; /* Center-align text */
+    position: relative; /* Relative positioning */
+    width: 100%; /* Full width */
+    margin-top: auto; /* Stick footer to the bottom */
+}
+
+.footer-content {
+    max-width: 1200px; /* Maximum width of the footer content */
+    margin: 0 auto; /* Center-align footer content */
+}
+
+.footer-content p {
+    margin: 10px 0; /* Space above and below paragraphs */
+}
+
+.footer-content a {
+    color: white; /* White text color for links */
+    margin: 0 10px; /* Space between links */
+    font-size: 1.5rem; /* Font size for links */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-content a:hover {
+    color: #a24d77; /* Dark purple color on hover */
+}
+
+/* Remove extra space under footer */
+body {
+    margin-bottom: 0; /* Remove bottom margin */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .header p {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+
+    .upload-section {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .upload-section h2 {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .convert-button,
+    .download-button,
+    .convert-another-button {
+        padding: 10px 15px; /* Adjust padding for smaller screens */
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+
+    .result-page img {
+        max-height: 200px; /* Adjust thumbnail size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 2rem; /* Adjust font size for very small screens */
+    }
+
+    .upload-section h2 {
+        font-size: 1.2rem; /* Adjust font size for very small screens */
+    }
+
+    .convert-button,
+    .download-button,
+    .convert-another-button {
+        padding: 8px 12px; /* Adjust padding for very small screens */
+        font-size: 0.8rem; /* Adjust font size for very small screens */
+    }
+
+    .result-page img {
+        max-height: 150px; /* Adjust thumbnail size for very small screens */
+    }
+
+    .flash-messages {
+        margin-top: 10px; /* Space above flash messages */
+        color: red; /* Red text color */
+        font-size: 16px; /* Font size for flash messages */
+        font-weight: bold; /* Bold text */
+        text-align: center; /* Center-align flash messages */
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Header section -->
+    <header class="header">
+        <h1>Image Converter</h1>
+        <p>Convert your images with ease</p>
+    </header>
+
+    <!-- Main content for displaying conversion result -->
+    <main class="result-page">
+        <h2>Conversion Complete</h2>
+        
+        <!-- Displaying the thumbnail of the converted image -->
+        <img src="{{ url_for('static', filename=thumbnail_path) }}" 
+             alt="Converted Image Thumbnail" 
+             class="thumbnail">
+        
+        <!-- Button to download the converted image -->
+        <a href="{{ url_for('uploaded_file', filename=converted_image) }}" 
+           download 
+           class="download-button">
+           Download
+        </a>
+        
+        <!-- Button to return to the main page and convert another image -->
+        <a href="/" 
+           class="convert-another-button">
+           Convert Another Image
+        </a>
+    </main>
+
+    <!-- Footer section with social media links -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Image Converter. All Rights Reserved.</p>
+            <p>
+                <a href="https://facebook.com" 
+                   target="_blank" 
+                   class="fab fa-facebook-f" 
+                   aria-label="Facebook">
+                </a>
+                <a href="https://twitter.com" 
+                   target="_blank" 
+                   class="fab fa-twitter" 
+                   aria-label="Twitter">
+                </a>
+                <a href="https://instagram.com" 
+                   target="_blank" 
+                   class="fab fa-instagram" 
+                   aria-label="Instagram">
+                </a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

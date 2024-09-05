@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Header section -->
+    <header class="header">
+        <h1>Image Converter</h1>
+        <p>Convert your images with ease</p>
+    </header>
+
+    <!-- Main content section -->
+    <main class="main-section">
+        <section class="upload-section">
+            <h2>Upload Your Image</h2>
+            <div class="upload-box" id="upload-box">
+                <label for="file-upload" class="upload-label">
+                    <i class="fas fa-image"></i>
+                    <span>Click or Drag & Drop to Select</span>
+                </label>
+                <input type="file" id="file-upload" name="image" accept="image/*">
+                <div class="file-name" id="file-name">No file chosen</div>
+            </div>
+
+            <!-- Select format dropdown -->
+            <label class="format-label" for="format">Select Format</label>
+            <select class="format-select" id="format" name="format">
+                <option value="png">PNG</option>
+                <option value="jpg">JPG</option>
+                <option value="jpeg">JPEG</option>
+            </select>
+
+            <!-- Convert button -->
+            <button class="convert-button" id="convert-button">Convert</button>
+
+            <!-- Flash messages -->
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <div class="flash-messages" id="flash-messages" style="margin-top: 10px; color: red; font-weight: bold;">
+                  {% for message in messages %}
+                    <p>{{ message }}</p>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endwith %}
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Image Converter. All Rights Reserved.</p>
+            <p>
+                <a href="https://facebook.com" target="_blank" class="fab fa-facebook-f"></a>
+                <a href="https://twitter.com" target="_blank" class="fab fa-twitter"></a>
+                <a href="https://instagram.com" target="_blank" class="fab fa-instagram"></a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- FontAwesome and custom script -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fileUpload = document.getElementById('file-upload');
+            const fileNameDisplay = document.getElementById('file-name');
+            const flashMessages = document.getElementById('flash-messages');
+
+            // Update file name display when a file is chosen
+            fileUpload.addEventListener('change', function() {
+                if (fileUpload.files.length > 0) {
+                    fileNameDisplay.textContent = fileUpload.files[0].name;
+                    // Hide flash message if a file is selected
+                    if (flashMessages) {
+                        flashMessages.style.display = 'none';
+                    }
+                } else {
+                    fileNameDisplay.textContent = 'No file chosen';
+                }
+            });
+
+            // Handle convert button click
+            document.getElementById('convert-button').addEventListener('click', function() {
+                const formData = new FormData();
+                formData.append('image', fileUpload.files[0]);
+                formData.append('format', document.getElementById('format').value);
+
+                fetch('/', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(text => {
+                    document.open();
+                    document.write(text);
+                    document.close();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
